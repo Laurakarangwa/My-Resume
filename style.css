@@ -1,0 +1,273 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #021818; /* dark green */
+  color: #dda713; /* gold */
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #da9a10; /* gold */
+  color: #f1fafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+.nav-links li a {
+  color: #f1fafa;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  background-color: #f1fafa;
+  color: #021818;
+}
+
+.toggle-btn {
+  display: none;
+  background: none;
+  font-size: 1.5em;
+  color: #f1fafa;
+  border: none;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3em 1em;
+  background-color: #021818; 
+}
+
+/* 🎥 Hero Section with Video */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(0.9); /* ⬅ pulls video back slightly */
+  z-index: 0;
+  opacity: 0.3;
+  filter: blur(1px) brightness(0.9);
+}
+
+
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 2em;
+}
+
+.hero img {
+  width: 200px;           /* 👈 Resize: You can change to 120px or 180px if needed */
+  height: 210px;
+  object-fit: cover;
+  border-radius: 50%;     /* 👈 Makes it a perfect circle */
+  border: 4px solid #FFD700; /* 👈 Gold border */
+  margin-bottom: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 👈 Optional: soft shadow for depth */
+}
+
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* darken video */
+  z-index: 0;
+}
+
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #021818;
+  margin-bottom: 1em;
+}
+
+/* Sections */
+section {
+  padding: 2em 1.5em;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  color: #da9a10;
+  margin-bottom: 1em;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #da9a10;
+  color: #f1fafa;
+  padding: 0.7em 2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #da9a10;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #da9a10;
+  color: #f1fafa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #da9a10;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 1em;
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .toggle-btn {
+    display: block;
+  }
+}
+
+
+/* 🌙 DARK MODE STYLES */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode .hero {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .navbar {
+  background-color: #333;
+}
+
+.dark-mode .nav-links li a {
+  color: #f1f1f1;
+}
+
+.dark-mode form input,
+.dark-mode form textarea {
+  background-color: #222;
+  color: white;
+  border: 1px solid #444;
+}
+
+.dark-mode form button {
+  background-color: #FFD700;
+  color: black;
+}
+
+/* 🌗 Toggle Button Style */
+#theme-toggle {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  padding: 0.5em 1em;
+  background-color: #FFD700;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  z-index: 100;
+}
+
+#theme-toggle:hover {
+  background-color: #FFC300;
+}
+
+
+
+/* 🌟 Typing Animation Styles */
+.typing-text {
+  font-size: 1.2em;
+  color: white;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  animation: blink-caret 0.7s step-end infinite;
+  margin-top: 0.5em;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ Force 3 equal columns */
+  gap: 3em;
+  padding: 0 2em;
+}
