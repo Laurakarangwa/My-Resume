@@ -1,12 +1,45 @@
-/* Global Styles */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #021818; /* dark green */
-  color: #dda713; /* gold */
-  line-height: 1.6;
+/* Root Variables for Theming */
+:root {
+  --bg-light: #fdfaf4;
+  --text-light: #021818;
+  --accent-light: #da9a10;
+  --bold-light: #814c00;
+
+  --bg-dark: #011c14;
+  --text-dark: #f0f0f0;
+  --accent-dark: #ffcc00;
+  --bold-dark: #ffe066;
+
+  --white: #ffffff;
+  --border-radius: 8px;
+  --transition: 0.3s ease;
 }
 
+/* Base Body Styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.15;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Bold Text Coloring */
+strong, b {
+  color: var(--bold-light);
+}
+body.dark-mode strong, body.dark-mode b {
+  color: var(--bold-dark);
+}
+
+/* Basic Link Styling */
 a {
   text-decoration: none;
   color: inherit;
@@ -14,8 +47,8 @@ a {
 
 /* Navbar */
 .navbar {
-  background-color: #da9a10; /* gold */
-  color: #f1fafa;
+  background-color: var(--accent-light);
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,55 +57,55 @@ a {
   top: 0;
   z-index: 10;
 }
-
+body.dark-mode .navbar {
+  background-color: var(--accent-dark);
+  color: #000;
+}
 .navbar .logo {
   font-weight: bold;
   font-size: 1.5em;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1em;
 }
-
 .nav-links li a {
-  color: #f1fafa;
+  color: var(--white);
   padding: 0.5em;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition), color var(--transition);
 }
-
 .nav-links li a:hover {
-  background-color: #f1fafa;
-  color: #021818;
+  background-color: var(--white);
+  color: var(--text-light);
 }
-
+body.dark-mode .nav-links li a {
+  color: black;
+}
+body.dark-mode .nav-links li a:hover {
+  background-color: var(--text-dark);
+  color: var(--accent-dark);
+}
 .toggle-btn {
   display: none;
-  background: none;
   font-size: 1.5em;
-  color: #f1fafa;
+  color: var(--white);
   border: none;
+  background: none;
 }
 
 /* Hero Section */
-.hero {
-  text-align: center;
-  padding: 3em 1em;
-  background-color: #021818; 
-}
-
-/* 🎥 Hero Section with Video */
 .hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-
 .hero-video {
   position: absolute;
   top: 0;
@@ -80,181 +113,199 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(0.9); /* ⬅ pulls video back slightly */
+  transform: scale(0.9);
   z-index: 0;
-  opacity: 0.3;
+  opacity: 0.5;
   filter: blur(1px) brightness(0.9);
+  border-radius: 10%;
 }
-
-
-
 .hero-content {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   z-index: 1;
-  color: white;
   padding: 2em;
+  color: var(--accent-light);
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-.hero img {
-  width: 200px;           /* 👈 Resize: You can change to 120px or 180px if needed */
-  height: 210px;
-  object-fit: cover;
-  border-radius: 50%;     /* 👈 Makes it a perfect circle */
-  border: 4px solid #FFD700; /* 👈 Gold border */
-  margin-bottom: 1em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 👈 Optional: soft shadow for depth */
+.hero-subtitle {
+  font-size: 1.1em;
+  color: #fefefe;
+  font-style: italic;
+  margin-bottom: 0.5em;
+  opacity: 0.9;
 }
-
-
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4); /* darken video */
-  z-index: 0;
+body.dark-mode .hero-subtitle {
+  color: #ffe9b1;
 }
-
-
 .profile-pic {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #021818;
+  border: 5px solid var(--accent-light);
   margin-bottom: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .profile-pic {
+  border-color: var(--accent-dark);
+}
+body.dark-mode .hero-content h1 {
+  color: var(--accent-dark);
 }
 
-/* Sections */
+/* Content Sections */
 section {
-  padding: 2em 1.5em;
-  max-width: 800px;
+  padding: 2em 1em;
+  max-width: 1000px;
   margin: auto;
 }
-
 h2 {
-  color: #da9a10;
+  color: var(--accent-light);
   margin-bottom: 1em;
 }
+body.dark-mode h2 {
+  color: var(--accent-dark);
+}
 
+/* Contact Form */
 form input,
 form textarea {
-  width: 100%;
+  width: 90%;
   padding: 0.75em;
   margin-bottom: 1em;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   font-size: 1em;
+  background-color: white;
+  color: black;
 }
-
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background-color: #223;
+  color: white;
+  border: 1px solid #444;
+}
 form button {
-  background-color: #da9a10;
-  color: #f1fafa;
+  background-color: var(--accent-light);
+  color: var(--white);
   padding: 0.7em 2em;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   font-weight: bold;
+  transition: background-color var(--transition);
+}
+body.dark-mode form button {
+  background-color: var(--accent-dark);
+  color: black;
+}
+form button:hover {
+  opacity: 0.9;
 }
 
-form button:hover {
-  background-color: #da9a10;
+/* Resume Button */
+.download-btn {
+  padding: 0.5em 1.1em;
+  background-color: var(--accent-light);
+  color: black;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition);
+}
+body.dark-mode .download-btn {
+  background-color: var(--accent-dark);
+  color: black;
+}
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Project Cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2em;
+  padding: 0 1em;
+}
+.project-card {
+  background: white;
+  padding: 1.5em;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode .project-card {
+  background: #1b1f1c;
+  color: var(--text-dark);
 }
 
 /* Footer */
 footer {
+  width: 100%;
+  padding: 2em 1em;
+  background-color: var(--accent-light);
+  color: var(--white);
   text-align: center;
-  padding: 1em;
-  background-color: #da9a10;
-  color: #f1fafa;
+  box-sizing: border-box;
+}
+body.dark-mode footer {
+  background-color: var(--accent-dark);
+  color: black;
 }
 
-/* Responsive Design */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #da9a10;
     position: absolute;
     top: 60px;
     right: 20px;
+    background-color: var(--accent-light);
     padding: 1em;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
   }
-
   .nav-links.show {
     display: flex;
   }
-
   .toggle-btn {
     display: block;
   }
 }
 
-
-/* 🌙 DARK MODE STYLES */
-body.dark-mode {
-  background-color: #121212;
-  color: #f1f1f1;
-}
-
-.dark-mode .hero {
-  background-color: #1e1e1e;
-}
-
-.dark-mode .navbar {
-  background-color: #333;
-}
-
-.dark-mode .nav-links li a {
-  color: #f1f1f1;
-}
-
-.dark-mode form input,
-.dark-mode form textarea {
-  background-color: #222;
-  color: white;
-  border: 1px solid #444;
-}
-
-.dark-mode form button {
-  background-color: #FFD700;
-  color: black;
-}
-
-/* 🌗 Toggle Button Style */
+/* Theme Toggle Button */
 #theme-toggle {
-  position: fixed;
-  top: 1em;
-  right: 1em;
   padding: 0.5em 1em;
-  background-color: #FFD700;
+  background-color: var(--accent-light);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   font-size: 1em;
   cursor: pointer;
-  z-index: 100;
+  transition: background-color var(--transition);
 }
-
+body.dark-mode #theme-toggle {
+  background-color: var(--accent-dark);
+}
 #theme-toggle:hover {
-  background-color: #FFC300;
+  opacity: 0.9;
 }
 
-
-
-/* 🌟 Typing Animation Styles */
+/* Typing Animation */
 .typing-text {
   font-size: 1.2em;
   color: white;
   border-right: 2px solid white;
   white-space: nowrap;
   overflow: hidden;
-  width: 100%;
-  max-width: 100%;
   animation: blink-caret 0.7s step-end infinite;
   margin-top: 0.5em;
 }
-
 @keyframes blink-caret {
   from, to {
     border-color: transparent;
@@ -264,10 +315,38 @@ body.dark-mode {
   }
 }
 
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ Force 3 equal columns */
-  gap: 3em;
-  padding: 0 2em;
+/* Extra Mobile Tweaks */
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 1em;
+    font-size: 1em;
+  }
+  .hero-content h1 {
+    font-size: 1.4em;
+    line-height: 1.3;
+    margin: 0.5em 0;
+  }
+  .hero-subtitle {
+    font-size: 1em;
+    padding: 0 0.5em;
+  }
+  .typing-text {
+    font-size: 0.95em;
+    margin-top: 0.5em;
+  }
+  .download-btn {
+    padding: 0.5em 1em;
+    font-size: 0.95em;
+    margin-top: 1em;
+  }
+  form input,
+  form textarea {
+    font-size: 1em;
+    padding: 0.7em;
+  }
+  form button {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.8em;
+  }
 }
