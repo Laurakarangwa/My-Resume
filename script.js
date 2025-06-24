@@ -1,17 +1,36 @@
-// Toggle responsive menu
-function toggleMenu() {
-  const nav = document.getElementById('navLinks');
-  nav.classList.toggle('show');
+iyi ni js: // THEME TOGGLE WITH LOCAL STORAGE
+const themeToggleBtn = document.getElementById("theme-toggle");
+const isDark = localStorage.getItem("theme") === "dark";
+
+if (isDark) {
+  document.body.classList.add("dark-mode");
+  themeToggleBtn.textContent = "☀";
+} else {
+  themeToggleBtn.textContent = "🌙";
 }
 
-// Basic contact form validation
+function toggleTheme() {
+  document.body.classList.toggle("dark-mode");
+  const isDarkMode = document.body.classList.contains("dark-mode");
+
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  themeToggleBtn.textContent = isDarkMode ? "☀" : "🌙";
+}
+
+// NAV MENU TOGGLE FOR SMALL SCREENS
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("show");
+}
+
+// FORM VALIDATION
 function validateForm() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
   const status = document.getElementById("form-status");
 
-  if (name === "" || email === "" || message === "") {
+  if (!name || !email || !message) {
     status.textContent = "Please fill in all fields.";
     status.style.color = "red";
     return false;
@@ -19,41 +38,11 @@ function validateForm() {
 
   status.textContent = "Message sent successfully!";
   status.style.color = "green";
-  return false; // For now prevent real submission
-}
-let dark = localStorage.getItem('dark')
-const themeSwitch = document.getElementById('theme-switch')
-
-const enableDark = () => {
-    document.body.classList.add('dark')
-    localStorage.setItem('dark','active')
+  return false;
 }
 
-const disableDark = () => {
-    document.body.classList.remove('dark')
-    localStorage.setItem('dark', null)
-}
-
-if (dark === "active") enableDark()
-
-themeSwitch.addEventListener("click", () => {
-    dark = localStorage.getItem('dark')
-    dark !== "active" ? enableDark() : disableDark()
-})
-
-function toggleTheme() {
-  document.body.classList.toggle("dark-mode");
-
-  const button = document.getElementById("theme-toggle");
-  if (document.body.classList.contains("dark-mode")) {
-    button.textContent = "☀️ Light Mode";
-  } else {
-    button.textContent = "🌙 Dark Mode";
-  }
-}
-
-
-const text = "Aspiring Developer | Creative Thinker | Problem Solver";
+// TYPING EFFECT
+const text = "Aspiring Developer & Creative Thinker";
 let index = 0;
 
 function typeText() {
@@ -61,7 +50,7 @@ function typeText() {
   if (index < text.length) {
     typingElement.textContent += text.charAt(index);
     index++;
-    setTimeout(typeText, 60); // typing speed in ms
+    setTimeout(typeText, 60);
   }
 }
 
