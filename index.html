@@ -8,19 +8,8 @@
   </head>
   <body>
     <!-- Navbar -->
-     <button id="theme-toggle" onclick="toggleTheme()">🌙 Toggle Theme</button>
     <nav class="navbar">
-      <div class="logo">
-        Welcome to my Portfolio✨!<!DOCTYPE html>
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=, initial-scale=1.0" />
-            <title>Document</title>
-          </head>
-          <body></body>
-        </html>
-      </div>
+      <div class="logo">Laura Kwizera ✨</div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
@@ -28,31 +17,26 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-switch" class="theme-switch">
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
-            </button>
-        </nav>
+      <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
       <button class="toggle-btn" onclick="toggleMenu()">☰</button>
     </nav>
 
     <!-- Hero -->
     <header class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-  <div class="hero-content">
-    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-    <h1>Laura KARANGWA KWIZERA</h1>
-    <p class="typing-text" id="typing"></p>
-  </div>
-
-  
-
-</header>
-
+      <div class="hero-content">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+        <h1>Laura KARANGWA KWIZERA</h1>
+        <p class="typing-text" id="typing"></p>
+        <a href="Laura_Resume.pdf" target="_blank" class="download-btn">
+          Download Resume
+        </a>
+      </div>
+    </header>
 
     <!-- Skills -->
     <section id="skills">
@@ -69,73 +53,66 @@
       </ul>
     </section>
 
+    <!-- Languages -->
+    <section id="languages">
+      <h2>Languages</h2>
+      <ul>
+        <li><strong>en</strong> - English (Fluent)</li>
+        <li><strong>fr</strong> - French (Intermediate)</li>
+        <li><strong>rw</strong> - Kinyarwanda (Native)</li>
+      </ul>
+    </section>
+
     <!-- Education -->
     <section id="education">
       <h2>Education</h2>
-      <p><strong> ⏺ University :</strong> African Leadership University</p>
+      <p><strong>⏺ University:</strong> African Leadership University</p>
       <p><strong>Reward:</strong> Advanced Diploma in Software Engineering</p>
-      <p><strong>Expected graduation Year:</strong> August, 2027</p>
+      <p><strong>Expected Graduation:</strong> August, 2027</p>
 
-      <p><strong> ⏺ Advanced level :</strong> FAWE Girls' School, Gisozi</p>
-      <p><strong>Reward:</strong> Highschool Diploma in PCM(Physics-Chemistry-Mathematics)</p>
-      <p><strong>Graduation Year:</strong> August, 2023</p>
+      <p><strong>⏺ High School:</strong> FAWE Girls' School</p>
+      <p><strong>Graduated:</strong> August, 2023</p>
 
-      <p><strong> ⏺ Ordinary level :</strong> Lycee Notre Dame de Citeaux </p>
-      <p><strong>Reward:</strong> Ordinary level Leaving Certificate</p>
-      <p><strong>Graduation Year:</strong> October, 2019</p>
+      <p><strong>⏺ O-Level:</strong> Lycée Notre Dame de Cîteaux</p>
+      <p><strong>Graduated:</strong> October, 2019</p>
     </section>
 
     <!-- Experience -->
     <section id="experience">
       <h2>Experience</h2>
-      <p>
-        <strong>Intern at African Student Education Fund (ASEF),
-        April 2024 - Present</strong>
-      </p>
+      <p><strong>Intern – ASEF (2024-Present)</strong></p>
       <ul>
-        <li>I mentor students, both in their educational and career path.</li>
-        <li>Collaborate with staff in dealing with students academic and tuition fees issues.</li>
+        <li>Mentored students on career and academic matters.</li>
+        <li>Supported tuition and academic tracking with staff.</li>
       </ul>
-      <p>
-        <strong>Volunteer at African Leadership University (ALU), 
-        November 2024 </strong>
-      </p>
+      <p><strong>Volunteer – ALU (Nov 2024)</strong></p>
       <ul>
-        <li>Assisted in organizing events in Funlab.</li>
-        <li>Co-hosted a traditional and culture Masterclass.</li>
+        <li>Organized cultural events and hosted a masterclass.</li>
       </ul>
-      <p>
-      <strong>
-        Machine knitter at Silk General Supply,
-        September 2023 - May 2025
-      </strong>
-      </p>
+      <p><strong>Machine Knitter – Silk General Supply (2023–2025)</strong></p>
       <ul>
-        <li>Operated and maintained knitting machines to produce high-quality garments.</li>
-        <li>Collaborated with designers and co-workers to ensure product specifications were met.</li>
-        <li>Managed inventory and assisted in quality control processes.</li></ul>
+        <li>Operated machines and assisted with inventory & QC.</li>
+      </ul>
     </section>
 
     <!-- Projects -->
-    <section class="projects" id="projects">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <h3>Knitting Design Website</h3>
-      <p>It's a mini website for showcasing our business machine-knitted products.</p>
-    </div>
-    <div class="project-card">
-      <h3>Issues Reporter</h3>
-      <p>A platform where community members can report any issue that requires authority involvement.</p>
-    </div>
-    <div class="project-card">
-      <h3>Personal Portfolio Website</h3>
-      <p>Designed and developed this responsive site using HTML, CSS, and JavaScript.</p>
-    </div>
-  </div>
-</section>
-
-
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Knitting Design Website</h3>
+          <p>Showcasing machine-knit product lines.</p>
+        </div>
+        <div class="project-card">
+          <h3>Issues Reporter</h3>
+          <p>Platform for citizens to report local issues.</p>
+        </div>
+        <div class="project-card">
+          <h3>Personal Portfolio</h3>
+          <p>This portfolio was built with HTML, CSS, and JavaScript.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact -->
     <section id="contact">
@@ -149,6 +126,7 @@
       <p id="form-status"></p>
     </section>
 
+    <!-- Footer -->
     <footer>
       <p>&copy; 2025 Laura Karangwa Kwizera. All rights reserved.</p>
     </footer>
