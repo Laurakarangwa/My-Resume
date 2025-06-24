@@ -144,8 +144,8 @@ body.dark-mode .hero-subtitle {
   color: #ffe9b1;
 }
 .profile-pic {
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 180px;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid var(--accent-light);
