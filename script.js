@@ -1,4 +1,4 @@
-iyi ni js: // THEME TOGGLE WITH LOCAL STORAGE
+// THEME TOGGLE WITH LOCAL STORAGE
 const themeToggleBtn = document.getElementById("theme-toggle");
 const isDark = localStorage.getItem("theme") === "dark";
 
